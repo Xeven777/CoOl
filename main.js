@@ -21,7 +21,7 @@ gsap.from(".contact a", 1.5, {
   gsap.to(
     ".loader-wrapper, .pre-loader",
     1,
-    { left: "-100%", top: "-90%", ease: "power4.inOut", delay: 2 },
+    { top: "-100%", ease: "power3.inOut", delay: 2 },
     "-=1"
   ),
   document.addEventListener("mousemove", function (e) {
@@ -37,3 +37,24 @@ gsap.from(".contact a", 1.5, {
       duration: 1.5,
     });
   });
+
+const cursor = document.querySelector(".custom-cursor");
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX - cursor.offsetWidth / 2 + "px";
+  cursor.style.top = e.clientY - cursor.offsetHeight / 2 + "px";
+});
+
+// const blob = document.querySelector(".custom-cursor");
+
+// window.onpointermove = (event) => {
+//   const { clientX, clientY } = event;
+
+//   blob.animate(
+//     {
+//       left: `${clientX}px`,
+//       top: `${clientY}px`,
+//     },
+//     { duration: 250, fill: "forwards" }
+//   );
+// };
